@@ -1,0 +1,354 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Portal-Data-Kalsel",
+        "title": "Service Portal-Data-Kalsel",
+        "contact": {}
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/publikasi/artikel/create": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artikel"
+                ],
+                "parameters": [
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.ArtikelView"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/artikel/delete/{id}": {
+            "delete": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artikel"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/artikel/get-all": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artikel"
+                ],
+                "parameters": [
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Request_Pagination"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/artikel/get-one/{id}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artikel"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/artikel/update/{id}": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artikel"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.ArtikelView"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/infografis/create": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Infografis"
+                ],
+                "parameters": [
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.InfografisView"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/infografis/delete/{id}": {
+            "delete": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Infografis"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/infografis/get-all": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Infografis"
+                ],
+                "parameters": [
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Request_Pagination"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/infografis/get-one/{id}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Infografis"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/publikasi/infografis/update/{id}": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Infografis"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "string",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "string",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.InfografisView"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "model.ArtikelView": {
+            "type": "object",
+            "properties": {
+                "abstrak": {
+                    "type": "string",
+                    "example": ""
+                },
+                "bidang_subjek": {
+                    "type": "string",
+                    "example": ""
+                },
+                "judul_jurnal": {
+                    "type": "string",
+                    "example": ""
+                },
+                "penerbit_jurnal": {
+                    "type": "string",
+                    "example": ""
+                },
+                "penulis_jurnal": {
+                    "type": "string",
+                    "example": ""
+                },
+                "tentang_penulis_jurnal": {
+                    "type": "string",
+                    "example": ""
+                }
+            }
+        },
+        "model.InfografisView": {
+            "type": "object",
+            "properties": {
+                "deskripsi": {
+                    "type": "string",
+                    "example": ""
+                },
+                "image_slider": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "deskripsi": {
+                                "type": "string",
+                                "example": ""
+                            },
+                            "file": {
+                                "type": "string",
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "judul": {
+                    "type": "string",
+                    "example": ""
+                },
+                "kategori": {
+                    "type": "string",
+                    "example": ""
+                },
+                "publisher": {
+                    "type": "string",
+                    "example": ""
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "model.Request_Pagination": {
+            "type": "object",
+            "properties": {
+                "order": {
+                    "type": "string",
+                    "example": "ASC"
+                },
+                "orderBy": {
+                    "type": "string",
+                    "example": ""
+                },
+                "page": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "size": {
+                    "type": "integer",
+                    "example": 11
+                }
+            }
+        }
+    }
+}

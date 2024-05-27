@@ -1,0 +1,235 @@
+basePath: /
+definitions:
+  model.ArtikelView:
+    properties:
+      abstrak:
+        example: ""
+        type: string
+      bidang_subjek:
+        example: ""
+        type: string
+      judul_jurnal:
+        example: ""
+        type: string
+      penerbit_jurnal:
+        example: ""
+        type: string
+      penulis_jurnal:
+        example: ""
+        type: string
+      tentang_penulis_jurnal:
+        example: ""
+        type: string
+    type: object
+  model.InfografisView:
+    properties:
+      deskripsi:
+        example: ""
+        type: string
+      image_slider:
+        items:
+          properties:
+            deskripsi:
+              example: ""
+              type: string
+            file:
+              example: ""
+              type: string
+          type: object
+        type: array
+      judul:
+        example: ""
+        type: string
+      kategori:
+        example: ""
+        type: string
+      publisher:
+        example: ""
+        type: string
+      tags:
+        example:
+        - ""
+        items:
+          type: string
+        type: array
+    type: object
+  model.Request_Pagination:
+    properties:
+      order:
+        example: ASC
+        type: string
+      orderBy:
+        example: ""
+        type: string
+      page:
+        example: 1
+        type: integer
+      size:
+        example: 11
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Portal-Data-Kalsel
+  title: Service Portal-Data-Kalsel
+paths:
+  /publikasi/artikel/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.ArtikelView'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Artikel
+  /publikasi/artikel/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Artikel
+  /publikasi/artikel/get-all:
+    post:
+      parameters:
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.Request_Pagination'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Artikel
+  /publikasi/artikel/get-one/{id}:
+    get:
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Artikel
+  /publikasi/artikel/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.ArtikelView'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Artikel
+  /publikasi/infografis/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.InfografisView'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Infografis
+  /publikasi/infografis/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Infografis
+  /publikasi/infografis/get-all:
+    post:
+      parameters:
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.Request_Pagination'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Infografis
+  /publikasi/infografis/get-one/{id}:
+    get:
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Infografis
+  /publikasi/infografis/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: string
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: string
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.InfografisView'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Infografis
+swagger: "2.0"
